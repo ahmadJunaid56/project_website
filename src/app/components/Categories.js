@@ -14,7 +14,7 @@ export default function TopCategories() {
 
   return (
     <div className="containers mx-auto ">
-      <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mt-8 mb-8">
+      <h2 className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mt-8 mb-8">
         Top Collections
       </h2>
       

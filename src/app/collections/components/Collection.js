@@ -4,7 +4,7 @@ const CollectionSection = () => {
     <div>
       <h2 className="text-6xl pt-40 pl-10">Explore Collections</h2>
     </div>
-    <div className="flex flex-col gap-12 mx-2  p-8">
+    <div className="flex flex-col gap-12 mx-2  p-6">
       
       {/* Taclux Collection */}
       <div className="flex flex-col md:flex-row bg-gray-50 p-6">
@@ -29,7 +29,7 @@ const CollectionSection = () => {
           <p className="text-gray-700 text-justify mb-6">
             Crafted to inspire creativity, the Taclux Collection offers versatile options ideal for accent walls, furniture, cabinetry, and unique decor elements. With its balance of durability and refined style, the Taclux Collection is perfect for those looking to make a statement in home interiors.
           </p>
-          <button className="bg-green-600 text-white px-4 py-2 rounded">Explore Collection</button>
+          <button className="bg-green-600 text-white font-sans px-3 py-2">Explore Collection</button>
         </div>
       </div>
 
@@ -55,7 +55,7 @@ const CollectionSection = () => {
           <p className="text-gray-700 text-xl text-justify mb-6">
             The UV Collection is ideal for enhancing furniture, cabinetry, wall panels, and more. Add a touch of elegance and resilience to your spaces with the UV Collection.
           </p>
-          <button className="bg-green-600 text-white px-4 py-2 rounded">Explore Collection</button>
+          <button className="bg-green-600 text-white px-3 py-2 font-sans">Explore Collection</button>
         </div>
       </div>
     </div>

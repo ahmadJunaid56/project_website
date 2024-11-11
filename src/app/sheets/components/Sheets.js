@@ -16,12 +16,17 @@ export default function ProductColors() {
     { id: '671', name: '671 Taclux SS Grain', category: 'Wood', image: '/diary (2).jpg' },
     { id: '672', name: '672 Taclux SS Grain', category: 'Wood', image: '/diary (3).jpg' },
     { id: '673', name: '673 Taclux SS Grain', category: 'Wood', image: '/diary (4).jpg' },
+    { id: '674', name: '674 Taclux SS Grain', category: 'Wood', image: '/diary (1).jpg' },
+    { id: '675', name: '675 Taclux SS Grain', category: 'Wood', image: '/diary (2).jpg' },
+    { id: '676', name: '676 Taclux SS Grain', category: 'Wood', image: '/diary (3).jpg' },
+    { id: '677', name: '677 Taclux SS Grain', category: 'Wood', image: '/diary (4).jpg' },
     // Add more color objects as needed...
   ];
 
   const [selectedCategory, setSelectedCategory] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
   const [modalData, setModalData] = useState(null);
+  const [visibleCount, setVisibleCount] = useState(8); // Number of items to show initially
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -41,14 +46,19 @@ export default function ProductColors() {
   const openModal = (color) => setModalData(color);
   const closeModal = () => setModalData(null);
 
+  // Load more colors
+  const handleLoadMore = () => {
+    setVisibleCount(visibleCount + 8); // Increase number of visible items by 8
+  };
+
   return (
     <div className="containers mx-auto pt-32 py-8">
-      <h2 className="text-4xl lg:text-6xl font-bold mt-8 mb-8">Explore Sheets</h2>
+      <h2 className="text-4xl lg:text-6xl font-bold mt-8 mb-4 lg:mb-8">Explore Sheets</h2>
 
       {/* Category Dropdown and Search Bar */}
-      <div className="flex justify-between mb-4">
+      <div className="flex flex-col sm:flex-row sm:justify-between mb-4">
         <select
-          className="border font-sans text-xl border-gray-300 px-6 py-3"
+          className="border font-sans text-xl border-gray-300 px-6 py-3 mb-4 sm:mb-0 sm:w-auto w-full"
           value={selectedCategory}
           onChange={(e) => setSelectedCategory(e.target.value)}
         >
@@ -57,21 +67,23 @@ export default function ProductColors() {
           <option value="Metal">Metal</option>
           <option value="Stone">Stone</option>
         </select>
-        <div>
+        <div className="flex flex-col sm:flex-row gap-2 sm:w-auto w-full">
           <input
             type="text"
             placeholder="Search by name or code"
-            className="border border-gray-300 p-2 mr-2"
+            className="border border-gray-300 p-2 mb-4 sm:mb-0 sm:w-auto w-full"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
-          <button className="bg-red-900 text-white uppercase font-sans p-2">Search</button>
+          <button className="bg-red-900 text-white uppercase font-sans p-2 sm:w-auto w-full">
+            Search
+          </button>
         </div>
       </div>
 
       {/* Displaying Filtered Colors */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-        {filteredColors.map((color) => (
+        {filteredColors.slice(0, visibleCount).map((color) => (
           <div
             key={color.id}
             className="bg-white overflow-hidden transition-shadow duration-300 cursor-pointer"
@@ -92,6 +104,18 @@ export default function ProductColors() {
         ))}
       </div>
 
+      {/* View More Button */}
+      {filteredColors.length > visibleCount && (
+        <div className="flex justify-center mt-4">
+          <button
+            onClick={handleLoadMore}
+            className="bg-red-900 text-white px-6 py-2 mt-4 text-lg font-sans"
+          >
+            View More
+          </button>
+        </div>
+      )}
+
       {/* Modal */}
       {modalData && (
         <div
@@ -105,12 +129,11 @@ export default function ProductColors() {
           >
             <button
               onClick={closeModal}
-              className="absolute top-4 right-4 text-gray-600 text-2xl z-70 p-2 mt-8 bg-gray-200 rounded-full hover:bg-gray-300"
+              className="absolute top-4 right-4 text-gray-600 text-2xl z-70 p-2 mt-12 bg-gray-200 rounded-full hover:bg-gray-300"
               aria-label="Close Modal"
             >
               ✕
             </button>
-
 
             <div className="flex justify-center items-center w-full md:w-1/2">
               <Image

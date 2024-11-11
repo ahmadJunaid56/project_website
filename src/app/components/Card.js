@@ -26,7 +26,7 @@ export default function Cards() {
   ];
 
   return (
-    <div className="flex justify-center mt-10 mb-10">
+    <div className="flex justify-center mt-10 mb-8">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-[95%] w-full px-4">
         {cards1.map((card, index) => (
           <div

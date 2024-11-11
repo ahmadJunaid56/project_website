@@ -14,7 +14,7 @@ export default function ProductColors() {
 
   return (
     <div className="containers mx-auto py-8">
-      <h2 className="text-3xl lg:text-6xl font-bold mt-8 mb-8">Trending Sheets</h2>
+      <h2 className="text-4xl lg:text-6xl font-bold mt-8 mb-8">Trending Sheets</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
         {colors.map((color, index) => (
           <div

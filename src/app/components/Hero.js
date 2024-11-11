@@ -2,17 +2,17 @@ import Link from 'next/link';
 
 export default function Home() {
   return (
-    <div className='pt-32 hero py-10'>
+    <div className='pt-28 hero py-10'>
       <div className="container">
         <div className="left-section">
           <h1>KMI Lasani Sheets For Home Decor</h1>
           <h2>BRING NEW LIFE TO YOUR HOME -</h2>
           <div>
             <Link href="/catalog">
-              <span className="button">VENDORS</span>
+              <span className="button bg-green-800">CATALOG</span>
             </Link>
             <Link href="/contact">
-              <span className="button">CONTACT US</span>
+              <span className="button bg-green-800">CONTACT US</span>
             </Link>
           </div>
         </div>

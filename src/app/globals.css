@@ -114,18 +114,14 @@ h2 {
 .button {
   margin-top: 10px;
   padding: 10px 20px;
-  background-color: #4caf50;
+  /* background-color: #4caf50; */
   color: white;
   border: none;
-  border-radius: 5px;
+  /* border-radius: 5px; */
   cursor: pointer;
   text-decoration: none;
   margin-right: 10px;
   display: inline-block;
-}
-
-.button:hover {
-  background-color: #45a049;
 }
 
 /* Responsive Styles */
@@ -137,7 +133,7 @@ h2 {
   }
 
   h1 {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
   }
 
   h2 {
@@ -167,7 +163,7 @@ h2 {
 
 @media (max-width: 480px) {
   h1 {
-    font-size: 2rem;
+    font-size: 3rem;
   }
 
   h2 {
@@ -572,3 +568,15 @@ p {
   /* Example brown color */
 }
 
+/* Custom brown gradient */
+.bg-brown-gradient {
+  background: linear-gradient(135deg, #6a4e23, #b87a4c); /* A rich brown gradient */
+}
+
+.bg-brown-gradient:hover {
+  background: linear-gradient(135deg, #4e3b1f, #9e6e40); /* Darker brown on hover */
+}
+
+.text-brown-gradient {
+  color: #6a4e23; /* Primary brown text */
+}

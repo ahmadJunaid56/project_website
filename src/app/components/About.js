@@ -5,8 +5,8 @@ import Link from 'next/link';
 const AboutUs = () => {
   return (
     <>
-      <h2 className="text-4xl lg:text-6xl pt-12 mx-12 mb-4">About Us</h2>
-      <section className="flex flex-col md:flex-row justify-between mx-6 text-justify px-4">
+      <h2 className="text-4xl lg:text-6xl pt-8 mx-12 mb-4">About Us</h2>
+      <section className="flex flex-col md:flex-row justify-between mx-6 text-justify mb-8 px-4">
         {/* Text Section */}
         <div className="flex-1 md:pl-0 pr-4 ">
           <p className="text-gray-600 mb-4">
