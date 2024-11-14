@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function Banner() {
   return (
-    <div className="bg-[#4a6448] text-center py-32 mt-16 px-4">
+    <div className="bg-[#4d6b4f] text-center py-32 mt-16 px-4">
       <h2 className="text-4xl lg:text-6xl text-white font-light mb-4 tracking-wide" data-aos="fade-up">
         Wanna Decorate Your Home?
       </h2>

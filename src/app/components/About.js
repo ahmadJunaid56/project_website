@@ -15,7 +15,7 @@ const AboutUs = () => {
           <p className="text-gray-600 mb-4">
             Available in a range of finishes and textures, our boards provide the versatility needed to complement any design style, from contemporary and minimalist to classic and sophisticated.
           </p>
-          <button className="mt-6 px-4 py-2 bg-gray-800 text-white rounded hover:bg-gray-700 transition">
+          <button className="mt-6 px-4 py-2 bg-[#4d6b4f] text-white hover:bg-green-800 transition">
             <Link href='/about'>
             More about us
             </Link>

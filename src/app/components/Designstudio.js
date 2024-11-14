@@ -43,25 +43,25 @@ const Portfolio = () => {
       {/* Filter buttons */}
       <div className="flex flex-wrap gap-4 mb-8" data-aos="fade-up">
         <button
-          className={`px-4 py-2 font-sans ${selectedClass === "all" ? "bg-brown text-white" : "bg-gray-200 text-gray-700"}`}
+          className={`px-4 py-2 font-sans ${selectedClass === "all" ? "bg-[#665a48] text-white" : "bg-gray-200 text-gray-700"}`}
           onClick={() => handleClick("all")}
         >
           All
         </button>
         <button
-          className={`px-4 py-2 font-sans ${selectedClass === "Living Room" ? "bg-brown text-white" : "bg-gray-200 text-gray-700"}`}
+          className={`px-4 py-2 font-sans ${selectedClass === "Living Room" ? "bg-[#665a48] text-white" : "bg-gray-200 text-gray-700"}`}
           onClick={() => handleClick("Living Room")}
         >
           Living Room
         </button>
         <button
-          className={`px-4 py-2 font-sans ${selectedClass === "Kitchen" ? "bg-brown text-white" : "bg-gray-200 text-gray-700"}`}
+          className={`px-4 py-2 font-sans ${selectedClass === "Kitchen" ? "bg-[#665a48] text-white" : "bg-gray-200 text-gray-700"}`}
           onClick={() => handleClick("Kitchen")}
         >
           Kitchen
         </button>
         <button
-          className={`px-4 py-2 font-sans ${selectedClass === "Office" ? "bg-brown text-white" : "bg-gray-200 text-gray-700"}`}
+          className={`px-4 py-2 font-sans ${selectedClass === "Office" ? "bg-[#665a48] text-white" : "bg-gray-200 text-gray-700"}`}
           onClick={() => handleClick("Office")}
         >
           Office

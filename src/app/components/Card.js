@@ -48,7 +48,7 @@ export default function Cards() {
             className="bg-gray-100 border border-gray-200 p-8 shadow-md flex flex-col items-center text-center font-serif"
             data-aos={animations[index % animations.length]} // Assign different animation to each card
           >
-            <div className="flex items-center justify-center w-16 h-16 mb-4 border-2 border-green-600 rounded-full text-green-600 text-3xl bg-gray-50">
+            <div className="flex items-center justify-center w-16 h-16 mb-4 border-2 border-green-800 rounded-full text-green-800 text-3xl bg-gray-50">
               {card.icon}
             </div>
             <h3 className="text-2xl text-black font-semibold mb-3">{card.title}</h3>

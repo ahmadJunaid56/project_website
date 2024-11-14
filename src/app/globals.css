@@ -69,56 +69,63 @@ h3 {
 }
 
 .item-1 {
-  background-image: url("/image.jpeg");
+  /* background-image: url("/image.jpeg"); */
+  background-color: #4d6b4f;
 }
 
 .item-2 {
-  background-image: url("/images1.jpg");
+  /* background-image: url("/images1.jpg"); */
+  background-color: #FDE7BB;
 }
 
 .item-3 {
-  background-image: url("/images2.jpeg");
+  /* background-image: url("/images2.jpeg"); */
+  background-color: #B6A28E;
 }
 
 .item-4 {
-  background-image: url("/images1.jpg");
+  /* background-image: url("/images1.jpg"); */
+  background-color: #E8BCB9;
 }
 
 .item-5 {
-  background-image: url("/image.jpeg");
+  /* background-image: url("/image.jpeg"); */
+  background-color: #AB886D;
 }
 
 .item-6 {
-  background-image: url("/images1.jpg");
+  /* background-image: url("/images1.jpg"); */
+  background-color: #D8D2C2;
 }
 
 .item-7 {
-  background-image: url("/images2.jpeg");
+  /* background-image: url("/images2.jpeg"); */
+  background-color: #664343;
 }
 
 .item-8 {
-  background-image: url("/image.jpeg");
+  /* background-image: url("/image.jpeg"); */
+  background-color: #A6B37D;
 }
 
 h1 {
-  font-size: 4.6rem;
-  text-transform: uppercase;
+  font-size: 5rem;
+  text-transform: capitalize;
   color: #4d6b4f;
+  padding-right: 40px;
   letter-spacing: 5px;
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   color: #4d6b4f;
 }
 
 .button {
   margin-top: 10px;
   padding: 10px 20px;
-  /* background-color: #4caf50; */
   color: white;
   border: none;
-  /* border-radius: 5px; */
   cursor: pointer;
   text-decoration: none;
   margin-right: 10px;
@@ -593,14 +600,14 @@ p {
 .image-collage {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* Three columns */
-  grid-template-rows: repeat(3, 125px); /* Three rows with a fixed height */
-  gap: 10px; /* Space between images */
-  max-width: 600px; /* Adjust width as needed */
+  grid-template-rows: repeat(3, 135px); /* Three rows with a fixed height */
+  gap: 20px; /* Space between images */
 }
 
 .image-collage img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 
 .image-collage img:nth-child(1) {
