@@ -1,10 +1,19 @@
+"use client";
 import Link from 'next/link';
+import Image from 'next/image';
+import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export default function Home() {
+  useEffect(() => {
+    AOS.init({ duration: 1500, once: true });
+  }, []);
+
   return (
     <div className='pt-28 hero py-10'>
       <div className="container">
-        <div className="left-section">
+        <div className="left-section pr-16">
           <h1>KMI Lasani Sheets For Home Decor</h1>
           <h2>BRING NEW LIFE TO YOUR HOME -</h2>
           <div>
@@ -17,21 +26,14 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="container1">
-          <div className="gallery-wrap">
-            <div className="item item-1"></div>
-            <div className="item item-2"></div>
-            <div className="item item-3"></div>
-            <div className="item item-4"></div>
-            <div className="item item-5"></div>
-            <div className="item item-6"></div>
-            <div className="item item-7"></div>
-            <div className="item item-8"></div>
-
-          </div>
+        <div className="image-collage">
+          <Image src="/image.jpeg" alt="Cool Cat" width={300} height={0} data-aos="fade-up" />
+          <Image src="/images1.jpg" alt="Cool Cat" width={300} height={0} data-aos="fade-down" />
+          <Image src="/images2.jpeg" alt="Cool Cat" width={300} height={0} data-aos="fade-up" />
+          <Image src="/images1.jpg" alt="Cool Cat" width={300} height={0} data-aos="fade-down" />
+          <Image src="/images2.jpeg" alt="Cool Cat" width={300} height={0} data-aos="fade-up" />
+          <Image src="/images1.jpg" alt="Cool Cat" width={300} height={0} data-aos="fade-down" />
         </div>
-
-
       </div>
     </div>
   );

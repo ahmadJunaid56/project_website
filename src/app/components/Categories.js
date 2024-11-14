@@ -4,17 +4,17 @@ export default function TopCategories() {
   const categories = [
     {
       name: 'Taclux',
-      image: '/images3.jpeg', // Replace with your actual image path
+      image: '/collection.jpeg', // Replace with your actual image path
     },
     {
       name: 'UV',
-      image: '/images2.jpeg', // Replace with your actual image path
+      image: '/collection1.jpeg', // Replace with your actual image path
     },
   ];
 
   return (
     <div className="containers mx-auto ">
-      <h2 className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mt-8 mb-8">
+      <h2 className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mt-8 mb-8" data-aos="fade-up">
         Top Collections
       </h2>
       
@@ -23,7 +23,7 @@ export default function TopCategories() {
           <div key={category.name} className="relative flex flex-col text-center">
             
             {/* Image Container */}
-            <div className="relative w-full h-64 sm:h-80 md:h-96 lg:h-[450px]"> {/* Adjust height at different screen sizes */}
+            <div className="relative w-full h-64 sm:h-80 md:h-96 lg:h-[450px]" data-aos="fade-up"> {/* Adjust height at different screen sizes */}
               <Image
                 src={category.image}
                 alt={category.name}

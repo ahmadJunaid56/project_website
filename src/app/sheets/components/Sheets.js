@@ -1,6 +1,8 @@
 'use client';
-import Image from 'next/image';
 import { useState, useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import Image from 'next/image';
 
 export default function ProductColors() {
   const colors = [
@@ -20,7 +22,6 @@ export default function ProductColors() {
     { id: '675', name: '675 Taclux SS Grain', category: 'Wood', image: '/diary (2).jpg' },
     { id: '676', name: '676 Taclux SS Grain', category: 'Wood', image: '/diary (3).jpg' },
     { id: '677', name: '677 Taclux SS Grain', category: 'Wood', image: '/diary (4).jpg' },
-    // Add more color objects as needed...
   ];
 
   const [selectedCategory, setSelectedCategory] = useState('');
@@ -29,11 +30,10 @@ export default function ProductColors() {
   const [visibleCount, setVisibleCount] = useState(8); // Number of items to show initially
 
   useEffect(() => {
-    const handleKeyDown = (e) => {
-      if (e.key === 'Escape') closeModal();
-    };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
+    AOS.init({
+      duration: 1200, // Animation duration in milliseconds
+      once: true,    // Whether animation should happen only once
+    });
   }, []);
 
   const filteredColors = colors.filter((color) => {
@@ -46,7 +46,9 @@ export default function ProductColors() {
   const openModal = (color) => setModalData(color);
   const closeModal = () => setModalData(null);
 
-  // Load more colors
+  // Array of animations to cycle through for each color card
+  const animations = ["fade-up", "fade-down"];
+
   const handleLoadMore = () => {
     setVisibleCount(visibleCount + 8); // Increase number of visible items by 8
   };
@@ -83,11 +85,12 @@ export default function ProductColors() {
 
       {/* Displaying Filtered Colors */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-        {filteredColors.slice(0, visibleCount).map((color) => (
+        {filteredColors.slice(0, visibleCount).map((color, index) => (
           <div
             key={color.id}
             className="bg-white overflow-hidden transition-shadow duration-300 cursor-pointer"
             onClick={() => openModal(color)}
+            data-aos={animations[index % animations.length]} // Assign a different animation to each card
           >
             <Image
               src={color.image}
@@ -125,7 +128,7 @@ export default function ProductColors() {
           <div
             className="bg-white p-8 relative flex flex-col md:flex-row gap-6 z-90 overflow-hidden"
             style={{ maxWidth: '95%', width: '1300px' }}
-            onClick={(e) => e.stopPropagation()} // Prevent modal close on content click
+            onClick={(e) => e.stopPropagation()}
           >
             <button
               onClick={closeModal}
@@ -140,7 +143,7 @@ export default function ProductColors() {
                 src={modalData.image}
                 alt={modalData.name}
                 layout="responsive"
-                width={1000} // Set to match modal width for responsive scaling
+                width={1000}
                 height={1000}
                 objectFit="cover"
                 className="rounded-lg"
@@ -149,8 +152,6 @@ export default function ProductColors() {
 
             <div className="flex flex-col max-w-full px-4 md:px-0 w-full md:w-1/2">
               <h3 className="text-3xl font-sans font-semibold mb-2">{modalData.name}</h3>
-
-              {/* Categories */}
               <div className="flex flex-wrap gap-2 mb-4">
                 {modalData.category.split(', ').map((tag, index) => (
                   <span key={index} className="bg-gray-200 text-gray-600 text-sm font-sans px-3 py-1 rounded-full">
@@ -159,7 +160,6 @@ export default function ProductColors() {
                 ))}
               </div>
               <h4 className="text-xl font-sans font-bold mb-2">Description</h4>
-              {/* Description */}
               <p className="text-gray-600 mb-4 text-justify">
                 Transform your spaces with the premium elegance of {modalData.name}, a high-quality board crafted by KMI. Designed to bring both durability and aesthetic appeal, this board boasts a sleek, soft-touch finish with a refined grain texture that complements any decor style, from modern minimalism to classic warmth.
               </p>
@@ -167,7 +167,6 @@ export default function ProductColors() {
                 Made to elevate interiors, it's more than just a board—it's a statement piece for any room.
               </p>
 
-              {/* Available Colors */}
               <div className="mt-4">
                 <h4 className="text-xl font-sans font-semibold mb-2">Available colors</h4>
                 <div className="flex gap-2 mb-8">

@@ -6,7 +6,7 @@ const AboutUs = () => {
   return (
     <>
       <h2 className="text-4xl lg:text-6xl pt-8 mx-12 mb-4">About Us</h2>
-      <section className="flex flex-col md:flex-row justify-between mx-6 text-justify mb-8 px-4">
+      <section className="flex flex-col md:flex-row justify-between mx-6 text-justify mb-8 px-4" data-aos="flip-left">
         {/* Text Section */}
         <div className="flex-1 md:pl-0 pr-4 ">
           <p className="text-gray-600 mb-4">
@@ -23,7 +23,7 @@ const AboutUs = () => {
         </div>
 
         {/* Image Section */}
-        <div className="flex-1 mt-8 px-2 md:mt-0 md:w-[50%] h-auto">
+        <div className="flex-1 mt-8 px-2 md:mt-0 md:w-[50%] h-auto" data-aos="flip-right">
           <Image
             src='/about.jpeg'
             alt="KMI Groups Design Patterns"

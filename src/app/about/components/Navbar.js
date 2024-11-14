@@ -34,7 +34,7 @@ export default function Home() {
 
   return (
     <div>
-      <header className={`bg-white ${scrolling ? 'bg-opacity-70 backdrop-blur-md top-0' : 'bg-opacity-90 top-4'} fixed left-4 right-4 mx-auto max-w-[95%] shadow-md transition-all duration-500 z-50`}>
+      <header className={`bg-white ${scrolling ? 'top-0' : 'top-4'} fixed left-4 right-4 mx-auto max-w-[95%] transition-all duration-500 z-50`}>
         <div className="flex justify-between items-center py-4 px-8">
           {/* Logo */}
           <div className="text-2xl font-bold text-green-900">KMI Groups</div>
